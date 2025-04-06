@@ -1,0 +1,1 @@
+psql -p 9130 -d postgres -f initSql.sql
