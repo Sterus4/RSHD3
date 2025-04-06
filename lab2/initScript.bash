@@ -1,1 +1,1 @@
-psql -p 9130 -d postgres -f initSql.sql
+psql -p 9130 -d postgres -f lab2/initSql.sql

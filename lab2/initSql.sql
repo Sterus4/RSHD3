@@ -18,6 +18,8 @@ ALTER USER myuser SET default_tablespace TO mytablespace;
 GRANT USAGE ON SCHEMA public TO sterus;
 GRANT CREATE ON SCHEMA public TO sterus;
 
+\c fakegraydisk
+SET ROLE sterus;
 BEGIN;
 SET default_tablespace = hgj96;
 
