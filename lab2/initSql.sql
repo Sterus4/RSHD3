@@ -1,11 +1,11 @@
-CREATE TABLESPACE hgj96 LOCATION '/var/db/postgres1/hgj96';
+CREATE TABLESPACE hgj96 LOCATION '/var/db/postgres3/hgj96';
 CREATE DATABASE fakegraydisk with template=template0 TABLESPACE=hgj96;
 
 
 UPDATE pg_database SET datistemplate = false WHERE datname = 'template1';
 DROP DATABASE template1;
 
-CREATE DATABASE template1 with TABLESPACE = hgj96;
+CREATE DATABASE template1 with template=template0 TABLESPACE = hgj96;
 UPDATE pg_database SET datistemplate = true WHERE datname = 'template1';
 
 create role sterus with login password '1234';
@@ -13,12 +13,12 @@ alter role sterus createdb;
 grant connect on database postgres to sterus;
 grant connect on database fakegraydisk to sterus;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO sterus;
-ALTER USER myuser SET default_tablespace TO mytablespace;
-GRANT USAGE ON SCHEMA public TO sterus;
-GRANT CREATE ON SCHEMA public TO sterus;
+ALTER USER sterus SET default_tablespace TO hgj96;
+GRANT ALL ON schema public to sterus;
+GRANT ALL ON tablespace hgj96 TO sterus;
 
 \c fakegraydisk
+GRANT ALL ON schema public to sterus;
 SET ROLE sterus;
 BEGIN;
 SET default_tablespace = hgj96;

@@ -1,1 +1,1 @@
-scp.exe -r -J s368581@helios.cs.ifmo.ru:2222 lab2 postgres1@pg147:~/
+scp.exe -r -J s368581@helios.cs.ifmo.ru:2222 lab2 postgres3@pg154:~/
