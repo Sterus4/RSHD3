@@ -17,6 +17,14 @@ ALTER USER sterus SET default_tablespace TO hgj96;
 GRANT ALL ON schema public to sterus;
 GRANT ALL ON tablespace hgj96 TO sterus;
 
+create table airlinesOnMain(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    country VARCHAR(100),
+    founded_year INT
+) tablespace hgj96;
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain', 'USSR', 1985);
+
 \c fakegraydisk
 GRANT ALL ON schema public to sterus;
 SET ROLE sterus;
