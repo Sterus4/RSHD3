@@ -1,4 +1,4 @@
-CREATE TABLESPACE hgj96 LOCATION '/var/db/postgres3/hgj96';
+CREATE TABLESPACE hgj96 LOCATION '/var/db/postgres1/hgj96';
 CREATE DATABASE fakegraydisk with template=template0 TABLESPACE=hgj96;
 
 
