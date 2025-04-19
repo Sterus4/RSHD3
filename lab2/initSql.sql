@@ -22,7 +22,7 @@ create table airlinesOnMain(
     name VARCHAR(255) NOT NULL,
     country VARCHAR(100),
     founded_year INT
-) tablespace hgj96;
+);
 INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain', 'USSR', 1985);
 
 \c fakegraydisk
