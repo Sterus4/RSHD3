@@ -1,0 +1,1 @@
+psql -p 9130 -d postgres -U postgres1 -f lab3onLogicError/causeAProblem.sql

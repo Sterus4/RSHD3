@@ -23,7 +23,12 @@ create table airlinesOnMain(
     country VARCHAR(100),
     founded_year INT
 );
-INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain', 'USSR', 1985);
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain1', 'USSR', 1985);
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain2', 'USSR', 1985);
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain3', 'USSR', 1985);
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain4', 'USSR', 1985);
+INSERT INTO airlinesOnMain (name, country, founded_year) VALUES ('AirTestForMain5', 'USSR', 1985);
+
 
 \c fakegraydisk
 GRANT ALL ON schema public to sterus;
@@ -67,8 +72,13 @@ CREATE TABLE tickets (
     FOREIGN KEY (airline_id) REFERENCES airlines(id) ON DELETE CASCADE
 ) tablespace hgj96;
 
-INSERT INTO airlines (name, country, founded_year) VALUES ('AirTest', 'USA', 1995);
+INSERT INTO airlines (name, country, founded_year) VALUES ('AirTest1', 'USA', 1995);
+INSERT INTO airlines (name, country, founded_year) VALUES ('AirTest2', 'USA', 1995);
+INSERT INTO airlines (name, country, founded_year) VALUES ('AirTest3', 'USA', 1995);
+
 INSERT INTO airline_employees (airline_id, first_name, last_name, position, hire_date) VALUES (1, 'John', 'Doe', 'Pilot', '2010-06-15');
+INSERT INTO airline_employees (airline_id, first_name, last_name, position, hire_date) VALUES (2, 'Alex', 'Lol', 'Pilot', '2010-06-15');
+
 INSERT INTO users (username, email, full_name) VALUES ('jane_doe', 'jane.doe@example.com', 'Jane Doe');
 INSERT INTO tickets (user_id, airline_id, flight_number, departure_time, arrival_time, price) VALUES (1, 1, 'AT123', '2025-06-01 10:00:00', '2025-06-01 14:00:00', 299.99);
 COMMIT;

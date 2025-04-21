@@ -7,3 +7,4 @@ select * from airlinesonmain;
 set role sterus;
 \dt
 select * from airlines;
+select * from airline_employees;
